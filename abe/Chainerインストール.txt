@@ -1,0 +1,50 @@
+□Chainerｲﾝｽﾄｰﾙ手順
+
+whlﾌｧｲﾙ置き場…http://www.lfd.uci.edu/~gohlke/pythonlibs/
+社内LANの場合、pip install時、末尾に" --proxy=10.12.1.10:8080"を付加する
+
+■numpy取得
+○whlﾌｧｲﾙ取得
+	http://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy
+	>python -m pip install C:\workspace\pycharm\scipy-0.18.1-cp35-cp35m-win32.whl
+
+×pip install numpy --proxy=10.12.1.10:8080
+
+■scipy取得
+○whlﾌｧｲﾙ取得
+	http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy
+	>python -m pip install C:\workspace\pycharm\scipy-0.18.1-cp35-cp35m-win32.whl
+
+×pip install scipy --proxy=10.12.1.10:8080
+
+■scikit-learn取得
+pip install scikit-learn --proxy=10.12.1.10:8080
+
+■h5py取得
+pip install h5py
+
+■pipｱｯﾌﾟﾃﾞｰﾄ
+python -m pip install --upgrade pip
+
+
+⇒ｲﾝｽﾄｰﾙ後"pip freeze"で
+C:\workspace\pycharm>pip freeze
+chainer==1.17.0
+filelock==2.0.6
+h5py==2.6.0
+nose==1.3.7
+numpy==1.11.2+mkl
+protobuf==3.1.0.post1
+scikit-learn==0.18
+scipy==0.18.1
+six==1.10.0
+
+■参考ｻｲﾄ
+http://qiita.com/kenmatsu4/items/7b8d24d4c5144a686412
+http://qiita.com/trtd56/items/50e38413dc5ccd7c5419
+
+
+
+
+
+
