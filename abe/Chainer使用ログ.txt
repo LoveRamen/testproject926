@@ -42,3 +42,5 @@ MNISTのサンプルは Adam アルゴリズムを採用しており、
 
 http://ailaby.com/chainer_mnist/
 http://msyksphinz.hatenablog.com/entry/2016/07/07/020000
+
+
