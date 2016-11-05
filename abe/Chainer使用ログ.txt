@@ -22,14 +22,43 @@ importしたparserの、add_argumentを使用して、
 のように実行すると、epoch数を3に制限することができる(デフォルトは20)
 参考：http://d.hatena.ne.jp/rudi/20100805/1281020304
 
+L.13～28
+全結合を定義。全結合の構成要素として"重み"、"バイアス"、"活性化関数"がある
+Linearの1インスタンスが1レイヤに相当。今回はl3まで作っているので、3レイヤあることになる。
+1レイヤには、ユニットが1つないし複数含まれる。
+  def __init__(self, n_units, n_out):
+    …
+         #Chainerは結合層をLinearクラスで組み立てる
+         #L.Linear(入力数, 出力数)
+         #入力数がNoneの時は、最初に入力が与えられた時、自動で設定される
+         #n_unitsはコマンドライン引数で指定(デフォルトは1000)
+         l1=L.Linear(None, n_units),  # n_in -> n_units
+    …
+  def __call__(self, x):
+         #活性化関数(?)として、relu(正規化線形関数(Rectified Linear Unit function))を使用。
+         #他にはシグモイド関数なんかがあるらしい
+         h1 = F.relu(self.l1(x))
+    …
+mnistでは、入力数は入力する画像の数、出力数は0～9の数字なので10個、ということになる。
+
+参考：http://qiita.com/kaityo256/items/172ae0a3ecb07751cbc8
+参考：http://qiita.com/kenmatsu4/items/7b8d24d4c5144a686412
+
+
+L.54
+　model = L.Classifier(MLP(args.unit, 10))
+モデルの作成
+  MLP：MultiLayerPerceptron(多層パーセプトロン)
+  　L.13～28で定義されている
+
 L.55
 今回はGPU数-1(デフォルト、L.35)なので、スルー
 
 L.60
  optimizer = chainer.optimizers.Adam()
-
- Adam
--> 重み・バイアスの更新にはさまざまな手法があり、
+オプティマイザの設定をする。これの役割は重み・バイアスの更新。
+ <<Adam>>
+重み・バイアスの更新にはさまざまな手法があり、
 その手法に応じてオプティマイザの具象クラスが複数用意されています。
 MNISTのサンプルは Adam アルゴリズムを採用しており、
 使用するクラス名も、ずばり Adam クラスです。
@@ -42,3 +71,4 @@ MNISTのサンプルは Adam アルゴリズムを採用しており、
 
 http://ailaby.com/chainer_mnist/
 http://msyksphinz.hatenablog.com/entry/2016/07/07/020000
+http://toxweblog.toxbe.com/2016/09/13/chainer-1-11-0%E4%BB%A5%E9%99%8D%E3%81%AEmnist%E3%81%AE%E8%A7%A3%E8%AA%AC%E3%81%AE%E3%82%88%E3%81%86%E3%81%AA%E3%83%A1%E3%83%A2/
