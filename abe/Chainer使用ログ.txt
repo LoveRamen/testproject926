@@ -13,17 +13,8 @@ scipy==0.18.1
 six==1.10.0
 ----------------------
 ¡mnistƒTƒ“ƒvƒ‹
-def main()
-L.29
-import‚µ‚½parser‚ÌAadd_argument‚ğg—p‚µ‚ÄA
-ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“ˆø”‚ğæ‚Á‚Ä‚­‚éB
-—á‚¦‚ÎÀs‚É
-"C:\workspace\pycharm\omoro2016\test2>train_mnist.py --epoch 3"
-‚Ì‚æ‚¤‚ÉÀs‚·‚é‚ÆAepoch”‚ğ3‚É§ŒÀ‚·‚é‚±‚Æ‚ª‚Å‚«‚é(ƒfƒtƒHƒ‹ƒg‚Í20)
-QlFhttp://d.hatena.ne.jp/rudi/20100805/1281020304
-
 L.13`28
-‘SŒ‹‡‚ğ’è‹`B‘SŒ‹‡‚Ì\¬—v‘f‚Æ‚µ‚Ä"d‚İ"A"ƒoƒCƒAƒX"A"Šˆ«‰»ŠÖ”"‚ª‚ ‚é
+‘SŒ‹‡ƒ‚ƒfƒ‹‚ğ’è‹`B‘SŒ‹‡‚Ì\¬—v‘f‚Æ‚µ‚Ä"d‚İ"A"ƒoƒCƒAƒX"A"Šˆ«‰»ŠÖ”"‚ª‚ ‚é
 Linear‚Ì1ƒCƒ“ƒXƒ^ƒ“ƒX‚ª1ƒŒƒCƒ„‚É‘Š“–B¡‰ñ‚Íl3‚Ü‚Åì‚Á‚Ä‚¢‚é‚Ì‚ÅA3ƒŒƒCƒ„‚ ‚é‚±‚Æ‚É‚È‚éB
 1ƒŒƒCƒ„‚É‚ÍAƒ†ƒjƒbƒg‚ª1‚Â‚È‚¢‚µ•¡”ŠÜ‚Ü‚ê‚éB
   def __init__(self, n_units, n_out):
@@ -39,10 +30,19 @@ Linear‚Ì1ƒCƒ“ƒXƒ^ƒ“ƒX‚ª1ƒŒƒCƒ„‚É‘Š“–B¡‰ñ‚Íl3‚Ü‚Åì‚Á‚Ä‚¢‚é‚Ì‚ÅA3ƒŒƒCƒ„‚ ‚é‚±‚
          #‘¼‚É‚ÍƒVƒOƒ‚ƒCƒhŠÖ”‚È‚ñ‚©‚ª‚ ‚é‚ç‚µ‚¢
          h1 = F.relu(self.l1(x))
     c
-mnist‚Å‚ÍA“ü—Í”‚Í“ü—Í‚·‚é‰æ‘œ‚Ì”Ao—Í”‚Í0`9‚Ì”š‚È‚Ì‚Å10ŒÂA‚Æ‚¢‚¤‚±‚Æ‚É‚È‚éB
+mnist‚Å‚ÍA“ü—Í”‚Í“ü—Í‚·‚é‰æ‘œ‚Ì‰æ‘f”Ao—Í”‚Í0`9‚Ì”š‚È‚Ì‚Å10ŒÂA‚Æ‚¢‚¤‚±‚Æ‚É‚È‚éB
 
-QlFhttp://qiita.com/kaityo256/items/172ae0a3ecb07751cbc8
+QlFhttp://qiita.com/kaityo256/items/172ae0a3ecb07751cbc8 (‚æ‚èƒVƒ“ƒvƒ‹‚Èƒ\[ƒXƒR[ƒh‚ªÚ‚Á‚Ä‚¢‚é‚Ì‚Å‚»‚ê‚àQÆ‚·‚é)
 QlFhttp://qiita.com/kenmatsu4/items/7b8d24d4c5144a686412
+
+>>def main()
+L.29
+import‚µ‚½parser‚ÌAadd_argument‚ğg—p‚µ‚ÄA
+ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“ˆø”‚ğæ‚Á‚Ä‚­‚éB
+—á‚¦‚ÎÀs‚É
+"C:\workspace\pycharm\omoro2016\test2>train_mnist.py --epoch 3"
+‚Ì‚æ‚¤‚ÉÀs‚·‚é‚ÆAepoch”‚ğ3‚É§ŒÀ‚·‚é‚±‚Æ‚ª‚Å‚«‚é(ƒfƒtƒHƒ‹ƒg‚Í20)
+QlFhttp://d.hatena.ne.jp/rudi/20100805/1281020304
 
 
 L.54
@@ -63,12 +63,17 @@ L.60
 MNIST‚ÌƒTƒ“ƒvƒ‹‚Í Adam ƒAƒ‹ƒSƒŠƒYƒ€‚ğÌ—p‚µ‚Ä‚¨‚èA
 g—p‚·‚éƒNƒ‰ƒX–¼‚àA‚¸‚Î‚è Adam ƒNƒ‰ƒX‚Å‚·B
 
+L.64
+   train, test = chainer.datasets.get_mnist()
+mnist‚Åg‚í‚ê‚éƒf[ƒ^‚ğæ‚Á‚Ä‚«‚Ätrain‚Ætest‚É“ü‚ê‚Ä‚¢‚éB
 
+
+¦¦‚±‚Ìæ‚ÍA‰º‹LƒTƒCƒg‚ğQÆ
+http://toxweblog.toxbe.com/2016/09/13/chainer-1-11-0%E4%BB%A5%E9%99%8D%E3%81%AEmnist%E3%81%AE%E8%A7%A3%E8%AA%AC%E3%81%AE%E3%82%88%E3%81%86%E3%81%AA%E3%83%A1%E3%83%A2/
 
 E’†ŠÔ‘w‚É‚ÍŠˆ«‰»ŠÖ” ReLUA
 o—Í‘w‚É‚Íƒ\ƒtƒgƒ}ƒbƒNƒXŠÖ”‚ğ“K—p‚µAƒNƒƒXƒGƒ“ƒgƒƒs[‚Å‘¹¸(loss)‚ğ‹‚ß‚Ä‚¢‚Ü‚·B
 ƒ†ƒjƒbƒg”‚Í‰º}‚Ì‚Æ‚¨‚èA1000A1000A10 ‚Å‚·B
-
+¡ ¡ ¡ Ql ¡ ¡ ¡ 
 http://ailaby.com/chainer_mnist/
 http://msyksphinz.hatenablog.com/entry/2016/07/07/020000
-http://toxweblog.toxbe.com/2016/09/13/chainer-1-11-0%E4%BB%A5%E9%99%8D%E3%81%AEmnist%E3%81%AE%E8%A7%A3%E8%AA%AC%E3%81%AE%E3%82%88%E3%81%86%E3%81%AA%E3%83%A1%E3%83%A2/
