@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 □Chainer使用ログ
 Date:
 2016/11/05
@@ -72,3 +73,51 @@ MNISTのサンプルは Adam アルゴリズムを採用しており、
 http://ailaby.com/chainer_mnist/
 http://msyksphinz.hatenablog.com/entry/2016/07/07/020000
 http://toxweblog.toxbe.com/2016/09/13/chainer-1-11-0%E4%BB%A5%E9%99%8D%E3%81%AEmnist%E3%81%AE%E8%A7%A3%E8%AA%AC%E3%81%AE%E3%82%88%E3%81%86%E3%81%AA%E3%83%A1%E3%83%A2/
+=======
+□Chainer使用ログ
+Date:
+2016/11/05
+----------------------
+chainer==1.17.0
+filelock==2.0.6
+h5py==2.6.0
+nose==1.3.7
+numpy==1.11.2+mkl
+protobuf==3.1.0.post1
+scikit-learn==0.18
+scipy==0.18.1
+six==1.10.0
+----------------------
+■mnistサンプル
+def main()
+L.29
+importしたparserの、add_argumentを使用して、
+コマンドライン引数を取ってくる。
+例えば実行時に
+"C:\workspace\pycharm\omoro2016\test2>train_mnist.py --epoch 3"
+のように実行すると、epoch数を3に制限することができる(デフォルトは20)
+参考：http://d.hatena.ne.jp/rudi/20100805/1281020304
+
+L.55
+今回はGPU数-1(デフォルト、L.35)なので、スルー
+
+L.60
+ optimizer = chainer.optimizers.Adam()
+
+ Adam
+-> 重み・バイアスの更新にはさまざまな手法があり、
+その手法に応じてオプティマイザの具象クラスが複数用意されています。
+MNISTのサンプルは Adam アルゴリズムを採用しており、
+使用するクラス名も、ずばり Adam クラスです。
+
+
+
+・中間層には活性化関数 ReLU、
+出力層にはソフトマックス関数を適用し、クロスエントロピーで損失(loss)を求めています。
+ユニット数は下図のとおり、1000、1000、10 です。
+
+http://ailaby.com/chainer_mnist/
+http://msyksphinz.hatenablog.com/entry/2016/07/07/020000
+
+
+>>>>>>> 865e24140823a81984150fb4d39bf64806ea4a92
